@@ -4,20 +4,20 @@ module.exports = {
   find () {
     return {
       _id: mongoose.Types.ObjectId(),
-      email: '12',
+      username: '12',
     }
   },
   register () {
     return {
       _id: mongoose.Types.ObjectId(),
-      email: 'juandelacruz@gmail.com',
+      username: 'juandelacruz@gmail.com',
     }
   },
   login () {
     return {
       user: {
         _id: mongoose.Types.ObjectId(),
-        email: 'juandelacruz@gmail.com',
+        username: 'juandelacruz@gmail.com',
       },
       token: 'the-jwt-token',
     }

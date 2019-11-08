@@ -6,7 +6,7 @@ module.exports = {
       _id: mongoose.Types.ObjectId(),
       user: {
         _id: mongoose.Types.ObjectId(),
-        email: 'ako ito',
+        username: 'ako ito',
       },
       name: 'Adobong Manok',
       reviews: [{
@@ -15,7 +15,7 @@ module.exports = {
         comment: 'Matsalap',
         user: {
           _id: 5,
-          email: 'StarLord',
+          username: 'StarLord',
         },
       }, {
         _id: 2,
@@ -23,7 +23,7 @@ module.exports = {
         comment: 'Tastyy',
         user: {
           _id: 5,
-          email: 'Chef boy',
+          username: 'Chef boy',
         },
       }],
     }
@@ -34,7 +34,7 @@ module.exports = {
         _id: mongoose.Types.ObjectId(),
         user: {
           _id: mongoose.Types.ObjectId(),
-          email: 'ako ito',
+          username: 'ako ito',
         },
         name: 'Adobong Manok',
         reviews: [{
@@ -43,7 +43,7 @@ module.exports = {
           comment: 'Matsalap',
           user: {
             _id: 5,
-            email: 'StarLord',
+            username: 'StarLord',
           },
         }, {
           _id: 2,
@@ -51,7 +51,7 @@ module.exports = {
           comment: 'Tastyy',
           user: {
             _id: 5,
-            email: 'Chef boy',
+            username: 'Chef boy',
           },
         }],
       },
@@ -63,7 +63,7 @@ module.exports = {
       author: mongoose.Types.ObjectId(),
       user: {
         _id: mongoose.Types.ObjectId(),
-        email: 'ako ito',
+        username: 'ako ito',
       },
       name: 'Adobong Manok',
       reviews: [{
@@ -72,7 +72,7 @@ module.exports = {
         comment: 'Matsalap',
         user: {
           _id: 5,
-          email: 'StarLord',
+          username: 'StarLord',
         },
       }, {
         _id: 2,
@@ -80,7 +80,7 @@ module.exports = {
         comment: 'Tastyy',
         user: {
           _id: 5,
-          email: 'Chef boy',
+          username: 'Chef boy',
         },
       }],
     }

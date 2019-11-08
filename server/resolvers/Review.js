@@ -8,7 +8,7 @@ module.exports = {
       rating: '4',
       user: {
         _id: mongoose.Types.ObjectId(),
-        email: 'Chef_boy',
+        username: 'Chef_boy',
       },
     }
   },
@@ -20,7 +20,7 @@ module.exports = {
         rating: '4',
         user: {
           _id: mongoose.Types.ObjectId(),
-          email: 'Chef_boy',
+          username: 'Chef_boy',
         },
       },
     ]
@@ -32,7 +32,7 @@ module.exports = {
       rating: '4',
       user: {
         _id: mongoose.Types.ObjectId(),
-        email: 'Chef_boy',
+        username: 'Chef_boy',
       },
     }
   },
