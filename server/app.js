@@ -3,10 +3,7 @@ const path = require('path')
 const cors = require('cors')
 const router = express.Router()
 
-const { connectToDatabase } = require('./config')
 const app = express()
-
-connectToDatabase()
 
 app.use(cors())
 app.use(express.json())

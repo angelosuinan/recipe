@@ -20,6 +20,9 @@ async function connectToDatabase () {
   }
 }
 
+const disconnectToDatabase = () => mongoose.connection.close()
+
 module.exports = {
   connectToDatabase,
+  disconnectToDatabase,
 }
