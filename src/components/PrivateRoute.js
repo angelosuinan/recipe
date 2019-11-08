@@ -4,19 +4,19 @@ import { Route, Redirect } from 'react-router-dom'
 
 import local from '../utils/local'
 
-const PublicRoute = props => {
+const PrivateRoute = props => {
   const { component: Component, ...rest } = props
   const render = props =>
     local.getToken() ? (
-      <Redirect to='/' />
-    ) : (
       <Component {...rest} {...props} />
+    ) : (
+      <Redirect to='/login' />
     )
   return <Route {...rest} render={render} />
 }
 
-PublicRoute.propTypes = {
+PrivateRoute.propTypes = {
   component: PropTypes.func,
 }
 
-export default PublicRoute
+export default PrivateRoute
