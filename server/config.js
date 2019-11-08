@@ -20,7 +20,10 @@ async function connectToDatabase () {
   }
 }
 
-const disconnectToDatabase = () => mongoose.connection.close()
+const disconnectToDatabase = () => {
+  mongoose.connection.db.dropDatabase()
+  mongoose.connection.close()
+}
 
 module.exports = {
   connectToDatabase,
