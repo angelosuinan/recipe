@@ -11,7 +11,7 @@ async function connectToDatabase () {
   try {
     await mongoose.connect(
       MONGODB_URI,
-      { autoIndex: false, useNewUrlParser: true },
+      { autoIndex: false, useNewUrlParser: true, useUnifiedTopology: true },
     )
     console.log(`Successfully connected to database.`)
   } catch (error) {
@@ -20,9 +20,10 @@ async function connectToDatabase () {
   }
 }
 
-const disconnectToDatabase = () => {
-  mongoose.connection.db.dropDatabase()
-  mongoose.connection.close()
+const disconnectToDatabase = (done) => {
+  mongoose.connection.db.dropDatabase(function () {
+    mongoose.connection.close(done)
+  })
 }
 
 module.exports = {
