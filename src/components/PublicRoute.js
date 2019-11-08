@@ -2,12 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Route, Redirect } from 'react-router-dom'
 
-import local from '../utils/local'
+import Storage from '../utils/storage'
 
 const PublicRoute = props => {
   const { component: Component, ...rest } = props
   const render = props =>
-    local.getToken() ? (
+    Storage.getToken() ? (
       <Redirect to='/' />
     ) : (
       <Component {...rest} {...props} />

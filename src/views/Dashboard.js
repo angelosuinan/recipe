@@ -16,7 +16,7 @@ export default function Dashboard (props) {
 
   return (
     <div className='dashboard-view'>
-      hello - world
+      -Navbar here-
       <main className='app-main'>
         {renderPrivateRouter(routes)}
       </main>

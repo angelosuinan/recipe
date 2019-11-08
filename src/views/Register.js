@@ -3,7 +3,7 @@ import { gql } from 'apollo-boost'
 import { useMutation } from '@apollo/react-hooks'
 
 import RegisterForm from '../components/RegisterForm'
-import local from '../utils/local'
+import Storage from '../utils/storage'
 
 const REGISTER = gql`
   mutation REGISTER($username: String!, $password: String!){
@@ -22,7 +22,7 @@ export default function Register ({ history }) {
     REGISTER,
     {
       onCompleted ({ register: { token } }) {
-        local.setToken(token)
+        Storage.setToken(token)
         history.replace('/')
       },
     },
