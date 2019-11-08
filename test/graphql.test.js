@@ -1,20 +1,11 @@
 const server = require('./server')
 const { expect } = require('chai')
 
-const { connectToDatabase, disconnectToDatabase } = require('../server/config')
-
 const graphql = server
   .post('/graphql')
   .set('Accept', 'application/graphql')
 
 describe('app', () => {
-  beforeEach(() => {
-    connectToDatabase()
-  })
-  afterEach(() => {
-    disconnectToDatabase()
-  })
-
   describe('/', () => {
     it('returns 200', () =>
       server
