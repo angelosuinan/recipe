@@ -1,12 +1,13 @@
 const mongoose = require('mongoose')
 const User = require('../models/user')
+const { getUserFromContext } = require('../utils/token')
 
 module.exports = {
-  currentUser () {
-    return {
-      _id: mongoose.Types.ObjectId(),
-      username: '12',
-    }
+  async currentUser (_params, context) {
+    const userId = getUserFromContext(context)
+    const user = await User.findById(userId)
+
+    return user
   },
   async register ({ username, password }) {
     const user = new User({

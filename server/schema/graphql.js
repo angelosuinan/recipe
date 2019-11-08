@@ -1,9 +1,9 @@
 const router = require('express').Router()
 const graphqlHTTP = require('express-graphql')
 const { buildSchema } = require('graphql')
-const User = require('../resolvers/User')
-const Recipe = require('../resolvers/Recipe')
-const Review = require('../resolvers/Review')
+const UserResolver = require('../resolvers/UserResolver')
+const RecipeResolver = require('../resolvers/RecipeResolver')
+const ReviewResolver = require('../resolvers/ReviewResolver')
 
 const schema = buildSchema(`
   type Query {
@@ -51,9 +51,9 @@ const rootValue = {
   foo () {
     return 'bar'
   },
-  ...User,
-  ...Recipe,
-  ...Review,
+  ...UserResolver,
+  ...RecipeResolver,
+  ...ReviewResolver,
 }
 
 router.use(
