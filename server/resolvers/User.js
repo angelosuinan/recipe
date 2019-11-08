@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const User = require('../models/user')
 
 module.exports = {
   currentUser () {
@@ -7,10 +8,17 @@ module.exports = {
       username: '12',
     }
   },
-  register () {
-    return {
-      _id: mongoose.Types.ObjectId(),
-      username: 'juandelacruz@gmail.com',
+  async register ({ username, password }) {
+    const user = new User({
+      username,
+      password,
+    })
+
+    try {
+      await user.save()
+      return user
+    } catch (err) {
+      throw ('Mongodb', err)
     }
   },
   login () {
