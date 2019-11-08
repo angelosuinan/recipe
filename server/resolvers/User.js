@@ -16,7 +16,10 @@ module.exports = {
 
     try {
       await user.save()
-      return user
+      return {
+        user,
+        token: user._id, // TODO change to JWT
+      }
     } catch (err) {
       throw ('Mongodb', err)
     }

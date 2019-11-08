@@ -16,7 +16,7 @@ const schema = buildSchema(`
   }
 
   type Mutation {
-    register(username: String, password: String): User
+    register(username: String, password: String): Auth
     login(username: String, password: String): Auth
     createRecipe(user: String, name: String): Recipe
     addReview(user: String, recipe:String, rating: String, comment: String): Review
