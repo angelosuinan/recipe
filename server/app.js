@@ -1,6 +1,7 @@
 const express = require('express')
 const path = require('path')
 const cors = require('cors')
+const router = express.Router()
 
 const { connectToDatabase } = require('./config')
 const app = express()
@@ -14,6 +15,12 @@ app.use(express.static(path.join(__dirname, '../build')))
 
 app.enable('trust proxy')
 
-app.use('/', require('./routes'))
+app.use(
+  '/',
+  router.get('/', function (req, res) {
+    res.send(`Hello World`)
+  }),
+)
+app.use('/graphql', require('./schema/graphql'))
 
 module.exports = app
