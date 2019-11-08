@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 module.exports = {
-  find () {
+  review () {
     return {
       _id: mongoose.Types.ObjectId(),
       comment: 'Its delicious',
@@ -12,7 +12,7 @@ module.exports = {
       },
     }
   },
-  list () {
+  reviews () {
     return [
       {
         _id: mongoose.Types.ObjectId(),
@@ -25,7 +25,7 @@ module.exports = {
       },
     ]
   },
-  add () {
+  addReview () {
     return {
       _id: mongoose.Types.ObjectId(),
       comment: 'Its delicious',

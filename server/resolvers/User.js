@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 module.exports = {
-  find () {
+  currentUser () {
     return {
       _id: mongoose.Types.ObjectId(),
       username: '12',

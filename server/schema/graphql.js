@@ -8,7 +8,7 @@ const Review = require('../resolvers/Review')
 const schema = buildSchema(`
   type Query {
     foo: String
-    user(_id: String): User
+    currentUser(_id: String): User
     recipe(_id: String): Recipe
     review(_id: String): Review
     recipes: [Recipe]

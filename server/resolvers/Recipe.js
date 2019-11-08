@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 module.exports = {
-  find () {
+  recipe () {
     return {
       _id: mongoose.Types.ObjectId(),
       user: {
@@ -28,7 +28,7 @@ module.exports = {
       }],
     }
   },
-  list () {
+  recipes () {
     return [
       {
         _id: mongoose.Types.ObjectId(),
@@ -57,7 +57,7 @@ module.exports = {
       },
     ]
   },
-  create () {
+  createRecipe () {
     return {
       _id: mongoose.Types.ObjectId(),
       author: mongoose.Types.ObjectId(),
