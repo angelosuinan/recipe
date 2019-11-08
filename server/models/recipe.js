@@ -6,7 +6,7 @@ const Schema = mongoose.Schema
  */
 
 const RecipeSchema = new Schema({
-  author: {
+  user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
     required: true,

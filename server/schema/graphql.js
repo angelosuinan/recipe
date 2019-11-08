@@ -51,19 +51,9 @@ const rootValue = {
   foo () {
     return 'bar'
   },
-
-  // query
-  user: User.find,
-  recipe: Recipe.find,
-  recipes: Recipe.list,
-  review: Review.find,
-  reviews: Review.list,
-
-  // mutations
-  register: User.register,
-  login: User.login,
-  createRecipe: Recipe.create,
-  addReview: Review.add,
+  ...User,
+  ...Recipe,
+  ...Review,
 }
 
 router.use(
