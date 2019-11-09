@@ -36,12 +36,6 @@ UserSchema.pre('save', function (next) {
   })
 })
 
-UserSchema.methods.comparePassword = function (candidatePassword, cb) {
-  bcrypt.compare(candidatePassword, this.password, function (err, isMatch) {
-    if (err) return cb(err)
-    cb(null, isMatch)
-  })
-}
 /**
  * Plugins
  */
@@ -50,7 +44,10 @@ UserSchema.plugin(uniqueValidator)
  * Methods
  */
 
-UserSchema.method({})
+UserSchema.methods.comparePassword = async function (candidatePassword, cb) {
+  const bool = await bcrypt.compare(candidatePassword, this.password)
+  return bool
+}
 
 /**
  * Statics

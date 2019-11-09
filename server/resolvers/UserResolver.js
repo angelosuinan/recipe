@@ -1,4 +1,3 @@
-const mongoose = require('mongoose')
 const User = require('../models/user')
 const { getUserFromContext } = require('../utils/token')
 
@@ -25,13 +24,20 @@ module.exports = {
       throw new Error('Mongodb', err)
     }
   },
-  login () {
-    return {
-      user: {
-        _id: mongoose.Types.ObjectId(),
-        username: 'juandelacruz@gmail.com',
-      },
-      token: 'the-jwt-token',
+  async login ({ username, password }) {
+    const user = await User.findOne({ username })
+    if (!user) {
+      throw new Error('User not found')
+    }
+    const bool = await user.comparePassword(password)
+
+    if (bool) {
+      return {
+        user,
+        token: user._id,
+      }
+    } else {
+      throw new Error('Invalid credentials')
     }
   },
 }
