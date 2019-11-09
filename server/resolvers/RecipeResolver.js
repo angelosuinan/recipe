@@ -6,7 +6,13 @@ module.exports = {
     const recipe = await Recipe
       .findOne({ _id: params.id })
       .populate('user')
-      .populate('reviews')
+      .populate({
+        path: 'reviews',
+        populate: {
+          path: 'user',
+          model: 'User',
+        },
+      })
 
     return recipe
   },
