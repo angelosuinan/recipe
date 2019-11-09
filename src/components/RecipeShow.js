@@ -26,7 +26,7 @@ export default function RecipeShow (props) {
     </div>
     <br />
     <div>
-      Reviews: <ReviewList reviews={recipe.reviews} />
+      Reviews: <ReviewList reviews={recipe.reviews} recipeId={recipe._id} />
     </div>
 
   </div>

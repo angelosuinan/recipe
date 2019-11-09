@@ -19,6 +19,10 @@ query RECIPE_BY_CURRENT_USER {
       rating
       comment
     }
+    user {
+      _id
+      username
+    }
   }
 }
 `
