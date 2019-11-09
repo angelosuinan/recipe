@@ -61,7 +61,13 @@ module.exports = {
     const recipe = await Recipe
       .find({ user: userId })
       .populate('user')
-      .populate('review')
+      .populate({
+        path: 'reviews',
+        populate: {
+          path: 'user',
+          model: 'User',
+        },
+      })
 
     return recipe
   },

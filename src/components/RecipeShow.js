@@ -7,6 +7,9 @@ export default function RecipeShow (props) {
 
   return <div>
     <div>
+      <img src={`${recipe.image}`} alt='NO PHOTO' height='200' width='200' />
+    </div>
+    <div>
       <p>Name: {recipe.name}</p>
     </div>
     <div>
