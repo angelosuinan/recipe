@@ -13,11 +13,10 @@ const RecipeSchema = new Schema({
   },
   reviews: [{ type: Schema.Types.ObjectId, ref: 'Review' }],
   name: { type: String, default: '', required: true },
-  // description: { type: String, default: '' },
-  // ingredients: { type: String, default: '' },
-  // steps: { type: String, default: '' },
-  // image_url: { type: String, default: '' },
-
+  description: { type: String, default: '' },
+  ingredients: { type: String, default: '' },
+  steps: { type: String, default: '' },
+  image: { type: String, default: '' },
 })
 
 /**

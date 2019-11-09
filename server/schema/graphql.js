@@ -9,17 +9,24 @@ const schema = buildSchema(`
   type Query {
     foo: String
     currentUser(_id: String): User
-    recipe(_id: String): Recipe
+    recipe(id: String): Recipe
     review(_id: String): Review
-    recipes: [Recipe]
-    reviews: [Review]
+    recipes(search: String): [Recipe]
+    recipesByCurrentUser: [Recipe]
+    reviewsByCurrentUser: [Review]
   }
 
   type Mutation {
     register(username: String, password: String): Auth
     login(username: String, password: String): Auth
-    createRecipe(user: String, name: String): Recipe
-    addReview(user: String, recipe:String, rating: String, comment: String): Review
+    createRecipe(
+      name: String,
+      description: String
+      image: String
+      steps: String
+      ingredients: String
+    ): Recipe
+    addReview(recipe:String, rating: String, comment: String): Review
   }
 
   type Auth {
@@ -36,6 +43,10 @@ const schema = buildSchema(`
     _id: String
     name: String
     user: User
+    description: String
+    steps: String
+    image: String
+    ingredients: String
     reviews: [Review]
   }
 

@@ -22,7 +22,7 @@ module.exports = {
         token: user._id, // TODO change to JWT
       }
     } catch (err) {
-      throw ('Mongodb', err)
+      throw new Error('Mongodb', err)
     }
   },
   login () {
