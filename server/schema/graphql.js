@@ -17,16 +17,16 @@ const schema = buildSchema(`
   }
 
   type Mutation {
-    register(username: String, password: String): Auth
-    login(username: String, password: String): Auth
+    register(username: String!, password: String!): Auth
+    login(username: String!, password: String!): Auth
     createRecipe(
-      name: String,
-      description: String
-      image: String
-      steps: String
-      ingredients: String
+      name: String!,
+      description: String!
+      image: String!
+      steps: String!
+      ingredients: String!
     ): Recipe
-    addReview(recipe:String, rating: String, comment: String): Review
+    addReview(recipe:String!, rating: String!, comment: String!): Review
   }
 
   type Auth {
