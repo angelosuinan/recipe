@@ -21,7 +21,13 @@ npm install
 docker-compose up -d
 ```
 
-* Endpoints
+* Run development server
+
+```
+npm run dev
+```
+
+## Endpoints
 
 `:3000/` - React app
 
