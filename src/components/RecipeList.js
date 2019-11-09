@@ -3,7 +3,6 @@ import React from 'react'
 import RecipeCard from './RecipeCard'
 
 export default function RecipeList (props) {
-  console.log(props)
   const { recipes } = props
   if (recipes.length === 0) {
     return <p>You dont have recipe yet</p>
