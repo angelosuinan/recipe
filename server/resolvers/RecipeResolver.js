@@ -18,7 +18,7 @@ module.exports = {
   },
 
   async recipes (params) {
-    const { search } = params
+    const { search = '' } = params
 
     const recipes = await Recipe
       .find({ 'name': { '$regex': search, '$options': 'i' } })
