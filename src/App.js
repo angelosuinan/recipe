@@ -32,7 +32,7 @@ const routes = [
   { path: '/', component: Home },
   { path: '/recipe/:id', component: Recipe },
   { path: '/profile', component: Profile },
-  { path: '/recipe/add', component: AddRecipe },
+  { path: '/add', component: AddRecipe },
 ]
 
 function App () {

@@ -12,7 +12,7 @@ const PrivateRoute = props => {
     ) : (
       <Redirect to='/login' />
     )
-  return <Route {...rest} render={render} />
+  return <Route {...rest} render={render} exact />
 }
 
 PrivateRoute.propTypes = {
