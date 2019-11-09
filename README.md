@@ -27,6 +27,14 @@ docker-compose up -d
 npm run dev
 ```
 
+## Test
+
+* run test
+
+```
+npm test
+```
+
 ## Endpoints
 
 `:3000/` - React app
