@@ -17,7 +17,13 @@ module.exports = {
     const recipes = await Recipe
       .find({ 'name': { '$regex': search, '$options': 'i' } })
       .populate('user')
-      .populate('review')
+      .populate({
+        path: 'reviews',
+        populate: {
+          path: 'user',
+          model: 'User',
+        },
+      })
 
     return recipes
   },
