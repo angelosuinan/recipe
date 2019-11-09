@@ -11,25 +11,30 @@ export default function RegisterForm ({ register, mutationError }) {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       {mutationError && <div className='ui red message'>{JSON.stringify(mutationError)}</div>}
-      <label>Username</label>
-      <input
-        name='username'
-        ref={formRegister({
-          required: 'Required',
-        })}
-      />
-      {errors.username && errors.username.message}
-      <label>Password</label>
-      <input
-        name='password'
-        type='password'
-        ref={formRegister({
-          required: 'Required',
-        })}
-      />
-      {errors.password && errors.password.message}
+      <div>
+        <label>Username</label>
+        <input
+          name='username'
+          ref={formRegister({
+            required: 'Required',
+          })}
+        />
+        {errors.username && errors.username.message}
+      </div>
 
-      <button type='submit'>Submit</button>
+      <div>
+        <label>Password</label>
+        <input
+          name='password'
+          type='password'
+          ref={formRegister({
+            required: 'Required',
+          })}
+        />
+        {errors.password && errors.password.message}
+      </div>
+
+      <button type='submit'>Register</button>
     </form>
   )
 }
