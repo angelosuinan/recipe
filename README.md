@@ -52,3 +52,7 @@ npm test
 `:3000/recipe/:id` - Recipe show view
 
 `:3000/profile` - View logged-in user's recipes
+
+## Todo
+
+[Issue #1](https://github.com/angelosuinan/recipe/issues/1)
