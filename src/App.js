@@ -15,6 +15,7 @@ import Home from './views/Home'
 import Profile from './views/Profile'
 import AddRecipe from './views/AddRecipe'
 import Recipe from './views/Recipe'
+import Logout from './views/Logout'
 
 const client = new ApolloClient({
   uri: 'http://localhost:8000/graphql',
@@ -33,6 +34,7 @@ const routes = [
   { path: '/recipe/:id', component: Recipe },
   { path: '/profile', component: Profile },
   { path: '/add', component: AddRecipe },
+  { path: '/logout', component: Logout },
 ]
 
 function App () {
