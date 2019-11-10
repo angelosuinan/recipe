@@ -44,7 +44,7 @@ UserSchema.plugin(uniqueValidator)
  * Methods
  */
 
-UserSchema.methods.comparePassword = async function (candidatePassword, cb) {
+UserSchema.methods.comparePassword = async function (candidatePassword) {
   const bool = await bcrypt.compare(candidatePassword, this.password)
   return bool
 }

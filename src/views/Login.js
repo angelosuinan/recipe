@@ -18,7 +18,7 @@ const LOGIN = gql`
 `
 
 export default function Login ({ history }) {
-  const [login, { error: mutationError, _loading }] = useMutation(
+  const [login, { error: mutationError }] = useMutation(
     LOGIN,
     {
       onCompleted ({ login: { token } }) {

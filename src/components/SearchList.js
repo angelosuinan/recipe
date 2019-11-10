@@ -24,7 +24,7 @@ query RECIPES($search: String){
 export default function SearchList () {
   const [searchTerm, setSearchTerm] = React.useState('')
 
-  const { _error, data } = useQuery(
+  const { data } = useQuery(
     RECIPES,
     { variables: { search: searchTerm } },
   )

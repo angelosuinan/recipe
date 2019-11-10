@@ -33,7 +33,7 @@ const RECIPE = gql`
 
 export default function Recipe (props) {
   const { match: { params: { id } } } = props
-  const { loading, _error, data } = useQuery(
+  const { loading, data } = useQuery(
     RECIPE,
     { variables: { id } },
   )

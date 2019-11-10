@@ -27,7 +27,7 @@ query RECIPE_BY_CURRENT_USER {
 }
 `
 export default function Profile () {
-  const { loading, _error, data } = useQuery(
+  const { loading, data } = useQuery(
     RECIPE_BY_CURRENT_USER,
   )
 

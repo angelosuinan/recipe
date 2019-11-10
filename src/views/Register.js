@@ -18,7 +18,7 @@ const REGISTER = gql`
 `
 
 export default function Register ({ history }) {
-  const [register, { error: mutationError, _loading }] = useMutation(
+  const [register, { error: mutationError }] = useMutation(
     REGISTER,
     {
       onCompleted ({ register: { token } }) {

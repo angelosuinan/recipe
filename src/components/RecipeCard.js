@@ -8,7 +8,7 @@ export default function RecipeCard (props) {
     <Link to={`/recipe/${recipe._id}`}>
       <div style={{ borderStyle: 'solid', marginBottom: 10, width: '50%' }}>
         <p >
-          <img src={`${recipe.image}`} alt='NO PHOTO' height='45' width='45' />
+          <img src={`${recipe.image}`} alt='recipe' height='45' width='45' />
         </p>
         <p>
           {recipe.name}

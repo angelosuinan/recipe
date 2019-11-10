@@ -1,6 +1,5 @@
 const server = require('./server')
 const { expect } = require('chai')
-const sinon = require('sinon')
 const { resolver } = require('./factory')
 const spec = require('./spec')
 

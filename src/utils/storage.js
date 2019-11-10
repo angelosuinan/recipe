@@ -1,5 +1,3 @@
-// const jwtDecode = require('jwt-decode')
-
 module.exports = {
   removeToken () {
     localStorage.removeItem('token')
